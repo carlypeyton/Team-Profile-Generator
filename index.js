@@ -72,3 +72,38 @@ function addIntern() {
         addEmployee();
     });
 };
+
+// Add new Engineer
+function addEngineer() {
+    inquirer.prompt([
+        {
+            name: "name",
+            message: "Please provide engineer name: ",
+            type: "input",
+        },
+        {
+            name: "id",
+            message: "Please provide engineer id: ",
+            type: "input",
+        },
+        {
+            name: "email",
+            message: "Please provide engineer email: ",
+            type: "input",
+        },
+        {
+            name: "github",
+            message: "Please provide engineer github username: ",
+            type: "input",
+        },
+    ]).then(function (res) {
+        //  Add new instance of engineer
+        const newEngineer = new Engineer(res.name, res.id, res.email, res.github);
+        // Log new engineer
+        console.log(newEngineer);
+        // Push to myTeam array
+        myTeam.push(newEngineer);
+        // Call addEmployee 
+        addEmployee();
+    });
+};
