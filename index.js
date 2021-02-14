@@ -107,3 +107,38 @@ function addEngineer() {
         addEmployee();
     });
 };
+
+// Add new Manager
+function addManager() {
+    inquirer.prompt([
+        {
+            name: "name",
+            message: "Please provide manager name: ",
+            type: "input",
+        },
+        {
+            name: "id",
+            message: "Please provide manager id: ",
+            type: "input",
+        },
+        {
+            name: "email",
+            message: "Please provide manager email: ",
+            type: "input",
+        },
+        {
+            name: "office",
+            message: "Please provide manager office number: ",
+            type: "input",
+        },
+    ]).then(function (res) {
+        // Add new instance of manager
+        var newManager = new Manager(res.name, res.id, res.email, res.office);
+        // Log new manager
+        console.log(newManager);
+        // Push to myTeam array
+        myTeam.push(newManager);
+        // Call addEmployee 
+        addEmployee();
+    });
+};
