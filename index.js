@@ -37,3 +37,38 @@ function addEmployee() {
         };
     });
 };
+
+// Add new Intern
+function addIntern() {
+    inquirer.prompt([
+        {
+            name: "name",
+            message: "Please provide intern name: ",
+            type: "input",
+        },
+        {
+            name: "id",
+            message: "Please provide intern id: ",
+            type: "input",
+        },
+        {
+            name: "email",
+            message: "Please provide intern email: ",
+            type: "input",
+        },
+        {
+            name: "school",
+            message: "Where does intern go to school?",
+            type: "input",
+        },
+    ]).then(function (res) {
+        // Instantiate intern with user responses to prompts
+        const newIntern = new Intern(res.name, res.id, res.email, res.school);
+        // Log new intern
+        console.log(newIntern);
+        // Push new intern to myTeam array
+        myTeam.push(newIntern);
+        // Call addEmployee 
+        addEmployee();
+    });
+};
