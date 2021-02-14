@@ -142,3 +142,107 @@ function addManager() {
         addEmployee();
     });
 };
+
+// Generate HTML - separate into beginning, cards, and end, and push each to array
+function generateHTML() {
+    console.log('Team Profile Created!');
+    // Create empty array for HTML content
+    const fullHTML = [];
+    // Start of HTML template
+    let startHTML =
+        `<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Profile Generator</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <style>
+            
+            </style>
+    </head>
+    
+    <body>
+        <div class="container-fluid" id="team">
+            <div class="row">
+                <div class="col-12 text-center team-name">
+                    <h1>My Team</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">`
+    // Push start of HTML to full HTML array
+    fullHTML.push(startHTML);
+    // Close UL and divs
+    const closeDivs =
+    `</ul>
+    </div>
+    </div>`
+    // Create card for all employees in myTeam array
+    for (let i = 0; i < myTeam.length; i++) {
+        let card =
+            `<div class="card employee-card">
+                <div class="card-header">
+                     <h2 class="card-title name"> ${myTeam[i].name}</h2>
+                    <h3 class="card-title role"> ${myTeam[i].role}</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item id">ID: ${myTeam[i].id}</li>
+                        <li class="list-group-item email">Email: <a href="mailto:${myTeam[i].email}">${myTeam[i].email}</a></li>
+                    `
+        if (myTeam[i].school) {
+            card += (`<li class="list-group-item school">School: ${myTeam[i].school}</li>` + closeDivs);
+            // var graduateIcon = `<i class="fas fa-user-graduate ml-2"></i>`;
+        };
+
+        if (myTeam[i].github) {
+            card += (`<li class="list-group-item github">GitHub: ${myTeam[i].github}</li>` + closeDivs);
+            // var glassesIcon = `<i class="fas fa-glasses ml-2"></i>`;
+        };
+
+        if (myTeam[i].office) {
+            card += (`<li class="list-group-item office">Office Number: ${myTeam[i].office}</li>` + closeDivs);
+            // var mugIcon = `<i class="fas fa-mug-hot ml-2"></i>`;
+        };
+        // Push employee profile cards to full HTML array
+        fullHTML.push(card);
+    }
+    // End HTML template
+    const endHTML =
+        `</div>
+        </div>
+        <!-- jQuery, Popper, Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </body>
+    
+    </html>`;
+    // Push end HTML to full HTML array
+    fullHTML.push(endHTML);
+    // Write New-HTML file, join content of full HTML array 
+    fs.writeFile(`./New-HTML.html`, fullHTML.join(""), function (err) {
+        // if any errors throw error
+        // should I catch errors instead?
+        if (err) throw err;
+    })
+};
+
+////////////////// RUN TIME /////////////////
+
+// Run addEmployee
+addEmployee();
+
