@@ -247,17 +247,14 @@ function generateHTML() {
                     `
         if (myTeam[i].school) {
             card += (`<li class="list-group-item school">School: ${myTeam[i].school}</li>` + closeDivs);
-            // var graduateIcon = `<i class="fas fa-user-graduate ml-2"></i>`;
         };
 
         if (myTeam[i].github) {
             card += (`<li class="list-group-item github">GitHub: ${myTeam[i].github}</li>` + closeDivs);
-            // var glassesIcon = `<i class="fas fa-glasses ml-2"></i>`;
         };
 
         if (myTeam[i].office) {
             card += (`<li class="list-group-item office">Office Number: ${myTeam[i].office}</li>` + closeDivs);
-            // var mugIcon = `<i class="fas fa-mug-hot ml-2"></i>`;
         };
         // Push employee profile cards to full HTML array
         fullHTML.push(card);
@@ -294,8 +291,3 @@ function generateHTML() {
 
 // Run addEmployee
 addEmployee();
-
-////TO DO
-    // role not showing up 
-    // icon for role 
-    // styling for profiles
