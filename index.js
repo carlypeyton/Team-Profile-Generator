@@ -151,20 +151,18 @@ function generateHTML() {
     // Start of HTML template
     let startHTML =
         `<!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Team Profile Generator</title>
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <!-- Google Fonts -->
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-            <!-- Styling -->
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Team Profile Generator</title>
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <!-- Google Fonts -->
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
             <style>
                 body {
                     background-image: url("https://img.pngio.com/hd-image-transparent-background-bottom-graphic-design-png-bottom-png-1885_766.png");
@@ -196,12 +194,12 @@ function generateHTML() {
                     font-size: 2.25rem;
                 }
                 h3 {
-                    font-family: 'Open Sans', sans-serif;            
+                    font-family: 'Open Sans', sans-serif;
                     text-align: center;
                     font-size: 1.5rem;
                 }
                 ul {
-                    font-family: 'Open Sans', sans-serif;            
+                    font-family: 'Open Sans', sans-serif;
                     list-style-type: none;
                 }
                 .list-group-item {
@@ -213,18 +211,17 @@ function generateHTML() {
                     text-align: center;
                 }
             </style>
-    </head>
-    
-    <body>
-        <div class="container-fluid" id="team">
-            <div class="row">
-                <div class="col-12 text-center team-name">
-                    <h1>Meet Your Team.</h1>
+        </head>
+        <body>
+            <div class="container-fluid" id="team">
+                <div class="row">
+                    <div class="col-12 text-center team-name">
+                        <h1>Meet Your Team.</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">`
+            <div class="container">
+                <div class="row">`
     // Push start of HTML to full HTML array
     fullHTML.push(startHTML);
     // Close UL and divs
@@ -280,10 +277,9 @@ function generateHTML() {
     // Push end HTML to full HTML array
     fullHTML.push(endHTML);
     // Write New-HTML file, join content of full HTML array 
-    fs.writeFile(`./New-HTML.html`, fullHTML.join(""), function (err) {
+    fs.writeFile(`./dist/sample.html`, fullHTML.join(""), function (err) {
         // if any errors throw error
-        // should I catch errors instead?
-        // if (err) throw err;
+        if (err) throw err;
     })
 };
 
