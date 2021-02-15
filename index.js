@@ -161,8 +161,57 @@ function generateHTML() {
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <!-- Google Fonts -->
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+            <!-- Styling -->
             <style>
-            
+                body {
+                    background-image: url("https://img.pngio.com/hd-image-transparent-background-bottom-graphic-design-png-bottom-png-1885_766.png");
+                    background-attachment: fixed;
+                    background-position: 20% -200%;
+                    background-repeat: no-repeat;
+                }
+                h1 {
+                    margin-top: 2rem;
+                    margin-bottom: 5rem;
+                    margin-left: 2rem;
+                    font-family: 'Merriweather', serif;
+                    font-size: 3rem;
+                    text-align: left;
+                }
+                .card {
+                    margin-right: 1rem;
+                    margin-bottom: 2rem;
+                    margin-left: 1rem;
+                    display: inline-block;
+                }
+                .card-header {
+                    background-color: rgb(245, 245, 245);
+                }
+                h2 {
+                    margin-top: .25rem;
+                    font-family: 'Merriweather', serif;
+                    text-align: center;
+                    font-size: 2.25rem;
+                }
+                h3 {
+                    font-family: 'Open Sans', sans-serif;            
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+                ul {
+                    font-family: 'Open Sans', sans-serif;            
+                    list-style-type: none;
+                }
+                .list-group-item {
+                    border: none;
+                    list-style-type: none;
+                    font-size: 1.1rem;
+                }
+                .card-header {
+                    text-align: center;
+                }
             </style>
     </head>
     
@@ -170,7 +219,7 @@ function generateHTML() {
         <div class="container-fluid" id="team">
             <div class="row">
                 <div class="col-12 text-center team-name">
-                    <h1>My Team</h1>
+                    <h1>Meet Your Team.</h1>
                 </div>
             </div>
         </div>
@@ -180,7 +229,7 @@ function generateHTML() {
     fullHTML.push(startHTML);
     // Close UL and divs
     const closeDivs =
-    `</ul>
+        `</ul>
     </div>
     </div>`
     // Create card for all employees in myTeam array
@@ -189,11 +238,11 @@ function generateHTML() {
             `<div class="card employee-card">
                 <div class="card-header">
                      <h2 class="card-title name"> ${myTeam[i].name}</h2>
-                    <h3 class="card-title role"> ${myTeam[i].role}</h3>
+                    <h3 class="card-title role"> ${myTeam[i].getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item id">ID: ${myTeam[i].id}</li>
+                        <li class="list-group-item id">Employee ID: ${myTeam[i].id}</li>
                         <li class="list-group-item email">Email: <a href="mailto:${myTeam[i].email}">${myTeam[i].email}</a></li>
                     `
         if (myTeam[i].school) {
@@ -237,7 +286,7 @@ function generateHTML() {
     fs.writeFile(`./New-HTML.html`, fullHTML.join(""), function (err) {
         // if any errors throw error
         // should I catch errors instead?
-        if (err) throw err;
+        // if (err) throw err;
     })
 };
 
@@ -246,3 +295,7 @@ function generateHTML() {
 // Run addEmployee
 addEmployee();
 
+////TO DO
+    // role not showing up 
+    // icon for role 
+    // styling for profiles
