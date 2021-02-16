@@ -247,7 +247,7 @@ function generateHTML() {
         };
 
         if (myTeam[i].github) {
-            card += (`<li class="list-group-item github">GitHub: ${myTeam[i].github}</li>` + closeDivs);
+            card += (`<li class="list-group-item github">GitHub: <a href="http://github.com/${myTeam[i].github}">${myTeam[i].github}</a></li>` + closeDivs);
         };
 
         if (myTeam[i].office) {
