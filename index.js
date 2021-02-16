@@ -240,14 +240,14 @@ function generateHTML() {
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item id">Employee ID: ${myTeam[i].id}</li>
-                        <li class="list-group-item email">Email: <a href="mailto:${myTeam[i].email}">${myTeam[i].email}</a></li>
+                        <li class="list-group-item email">Email: <a href="mailto:${myTeam[i].email}" target="_blank">${myTeam[i].email}</a></li>
                     `
         if (myTeam[i].school) {
             card += (`<li class="list-group-item school">School: ${myTeam[i].school}</li>` + closeDivs);
         };
 
         if (myTeam[i].github) {
-            card += (`<li class="list-group-item github">GitHub: <a href="http://github.com/${myTeam[i].github}">${myTeam[i].github}</a></li>` + closeDivs);
+            card += (`<li class="list-group-item github">GitHub: <a href="http://github.com/${myTeam[i].github}" target="_blank">${myTeam[i].github}</a></li>` + closeDivs);
         };
 
         if (myTeam[i].office) {
