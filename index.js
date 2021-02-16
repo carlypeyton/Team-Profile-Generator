@@ -167,7 +167,7 @@ function generateHTML() {
                 body {
                     background-image: url("https://img.pngio.com/hd-image-transparent-background-bottom-graphic-design-png-bottom-png-1885_766.png");
                     background-attachment: fixed;
-                    background-position: 20% -200%;
+                    background-position: 0% -180%;
                     background-repeat: no-repeat;
                 }
                 h1 {
@@ -179,10 +179,10 @@ function generateHTML() {
                     text-align: left;
                 }
                 .card {
-                    width: 18rem;
-                    margin-right: 1rem;
+                    width: 20rem;
+                    margin-right: auto;
                     margin-bottom: 2rem;
-                    margin-left: 1rem;
+                    margin-left: auto;
                     display: inline-block;
                 }
                 .card-header {
@@ -227,7 +227,7 @@ function generateHTML() {
     fullHTML.push(startHTML);
     // Close UL and divs
     const closeDivs =
-            `</ul>
+        `</ul>
          </div>
     </div>`
     // Create card for all employees in myTeam array
@@ -278,7 +278,7 @@ function generateHTML() {
     // Push end HTML to full HTML array
     fullHTML.push(endHTML);
     // Write New-HTML file, join content of full HTML array 
-    fs.writeFile(`./generated.html`, fullHTML.join(""), function (err) {
+    fs.writeFile(`./sample.html`, fullHTML.join(""), function (err) {
         // if any errors throw error
         if (err) throw err;
     })
