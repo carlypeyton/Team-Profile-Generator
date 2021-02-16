@@ -278,7 +278,7 @@ function generateHTML() {
     // Push end HTML to full HTML array
     fullHTML.push(endHTML);
     // Write New-HTML file, join content of full HTML array 
-    fs.writeFile(`./dist/sample.html`, fullHTML.join(""), function (err) {
+    fs.writeFile(`./generated.html`, fullHTML.join(""), function (err) {
         // if any errors throw error
         if (err) throw err;
     })

@@ -31,10 +31,14 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 ```
 ## Application Walkthrough
-
+![Application Walkthrough Gif](Media/Meet_Your_Team.gif)
+  * https://drive.google.com/file/d/1BJJMhh7VcZWELZgB6RCoBFUmfU8pR6Hz/view
 
 ## Testing 
-This application was tested using Jest testing framework. All tests have passed. 
+This application was tested using Jest testing framework. All tests have passed.
+
+![Application Testing Gif](Media/Meet_Your_Team_Tests.gif)
+* https://drive.google.com/file/d/1P6IpGaonW7IDVNJaOSSjP7WFmfnQopbC/view
 
 <img src = "Screenshots/Employee_Test.png" width=400px>
 <img src = "Screenshots/Intern_Test.png" width=400px>
