@@ -179,6 +179,7 @@ function generateHTML() {
                     text-align: left;
                 }
                 .card {
+                    width: 18rem;
                     margin-right: 1rem;
                     margin-bottom: 2rem;
                     margin-left: 1rem;
@@ -226,8 +227,8 @@ function generateHTML() {
     fullHTML.push(startHTML);
     // Close UL and divs
     const closeDivs =
-        `</ul>
-    </div>
+            `</ul>
+         </div>
     </div>`
     // Create card for all employees in myTeam array
     for (let i = 0; i < myTeam.length; i++) {
@@ -239,19 +240,19 @@ function generateHTML() {
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item id">Employee ID: ${myTeam[i].id}</li>
-                        <li class="list-group-item email">Email: <a href="mailto:${myTeam[i].email}" target="_blank">${myTeam[i].email}</a></li>
+                        <strong><li class="list-group-item id">Employee ID:</strong> ${myTeam[i].id}</li>
+                        <strong><li class="list-group-item email">Email:</strong> <a href="mailto:${myTeam[i].email}" target="_blank">${myTeam[i].email}</a></li>
                     `
         if (myTeam[i].school) {
-            card += (`<li class="list-group-item school">School: ${myTeam[i].school}</li>` + closeDivs);
+            card += (`<strong><li class="list-group-item school">School:</strong> ${myTeam[i].school}</li>` + closeDivs);
         };
 
         if (myTeam[i].github) {
-            card += (`<li class="list-group-item github">GitHub: <a href="http://github.com/${myTeam[i].github}" target="_blank">${myTeam[i].github}</a></li>` + closeDivs);
+            card += (`<strong><li class="list-group-item github">GitHub:</strong> <a href="http://github.com/${myTeam[i].github}" target="_blank">${myTeam[i].github}</a></li>` + closeDivs);
         };
 
         if (myTeam[i].office) {
-            card += (`<li class="list-group-item office">Office Number: ${myTeam[i].office}</li>` + closeDivs);
+            card += (`<strong><li class="list-group-item office">Office Number:</strong> ${myTeam[i].office}</li>` + closeDivs);
         };
         // Push employee profile cards to full HTML array
         fullHTML.push(card);
