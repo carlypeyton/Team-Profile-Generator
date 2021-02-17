@@ -1,7 +1,7 @@
 // Require Node modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const jest = require("jest");
+// const jest = require("jest"); //testing
 // Require lib modules
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
