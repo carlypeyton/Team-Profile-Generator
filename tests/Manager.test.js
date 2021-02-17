@@ -1,6 +1,6 @@
 const Manager = require('../lib/Manager');
-// Interns have latest school info displayed
-// Set school for testing
+// Managers have office number info displayed
+// Set office number for testing
 test("Should set office number", () => {
     const testValue = "123";
     const testManager = new Manager("Poe", 13, "poe@test.com", testValue);
