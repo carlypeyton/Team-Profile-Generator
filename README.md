@@ -40,10 +40,5 @@ This application was tested using Jest testing framework. All tests have passed.
 ![Application Testing Gif](Media/Meet_Your_Team_Tests.gif)
 * https://drive.google.com/file/d/1P6IpGaonW7IDVNJaOSSjP7WFmfnQopbC/view
 
-<img src = "Media/Employee_Test.png" width=400px>
-<img src = "Media/Intern_Test.png" width=400px>
-<img src = "Media/Engineer_Test.png" width=400px>
-<img src = "Media/Manager_Test.png" width=400px>
-
 ## Installation Instructions
 Install npm inquirer package prior to deploying application. 
